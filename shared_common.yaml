@@ -1,0 +1,74 @@
+# Rime Shared Configurations
+# 这里存放所有输入方案共用的配置块
+
+common_switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: emoji_suggestion
+    reset: 1
+    states: [ "🈚️️", "🈶️️" ]
+  - name: zh_simp # 统一繁简转换开关名
+    reset: 1
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+common_engine_filters:
+  - simplifier@emoji_suggestion
+  - simplifier
+  - uniquifier
+  - lua_filter@single_char_first_filter
+
+common_engine_translators:
+  - punct_translator
+  - script_translator
+  - table_translator@custom_phrase
+  - table_translator@english
+  - lua_translator@date_translator
+  - lua_translator@calculator_translator
+  - lua_translator@number_translator
+
+# Easy_en 英文混输设定
+english_config:
+  dictionary: easy_en
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: -0.5
+  comment_format:
+    - xform/.*//
+
+# 自定义短语设定
+custom_phrase_config:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+
+# Emoji 设定
+emoji_config:
+  opencc_config: emoji.json
+  option_name: emoji_suggestion
+  tags: abc
+
+# 笔画反查设定
+reverse_lookup_config:
+  dictionary: stroke
+  enable_completion: true
+  prefix: "`"
+  suffix: "'"
+  tips: "〔笔画反查〕"
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+  comment_format:
+    - xform/([nl])v/$1ü/
+
+# 通用识别器正则
+common_patterns:
+  calculator: "^q[0-9xX\\+\\-\\*/\\(\\)\\.:]+$"
+  number: "^R[0-9]+[.]?[0-9]*$"
+  reverse_lookup: "^`[hspnz]*$"

@@ -1,68 +1,83 @@
-# Rime 输入法配置指南
+# 🐉 Rime Setting - 极致输入体验配置
 
-## 用法
+一套专为 macOS 鼠须管（Squirrel）打造的 Rime 高级配置，基于 **“模块化共享架构”** 设计，集成了 **Lua 增强**、**中英混输** 和 **语义模型**。
 
-1. 安装[Rime输入法](https://rime.im/),并注销或重启
-2. 下载仓库所有配置文件到本地
-3. 将下载的除字体外的所有文件覆盖到用户设定文件夹
-4. 安装字体 ( font 目录)
-5. 也可以在“用户文件夹”中查看
-6. 右键点击rime输入法图标，点击重新部署，部署完毕即可用
+---
 
-用户设定文件夹在不同的系统下也有不同,如下
+## ✨ 核心特性
 
-- Windows
-  - Weasel: %APPDATA%\Rime
-- Mac OS X
-  - Squirrel: ~/Library/Rime
-- Linux
-  - iBus: ~/.config/ibus/rime
-  - Fcitx: ~/.config/fcitx/rime
+- 🧠 **语义模型**: 集成 `Octagram` 语言模型，大幅提升长句子预测准确率。
+- 🔤 **中英混输**: 内置 `Easy_en` 英文词库，输入英文单词自动联想。
+- 🧮 **动态计算器**: 在输入框直接计算结果。输入 `q` + 表达式（如 `q1+2*3`）。
+- 💰 **金额大写**: 财务报销神器。输入 `R` + 数字（如 `R123.45`）自动转换人民币大写。
+- 🔍 **笔画反查**: 遇到生僻字，按 `` ` `` 键进入笔画模式（h横、s竖、p撇、n捺、z折）查拼音。
+- 📅 **快捷时间**: 输入 `rq` 出日期，`sj` 出时间，`xq` 出星期。
+- 🎨 **精美皮肤**: 内置 10+ 套配色方案（微信键盘风格、Mac 风格、Nord 等）。
 
+---
 
-## 配置文件说明
+## 🚀 快速上手
 
-- `default.custom.yaml` 设置输入法、如何切换输入法、翻页等
-- `double_pinyin_flypy.custom.yaml` 双拼方案，
-- `squirrel.custom.yaml` 鼠须管( Mac 版本 )设置哪些软件默认英文输入，输入法皮肤等
-- `weasel.custom.yaml` 小狼毫( Win 版本 )设置哪些软件默认英文输入，输入法皮肤等
-- `custom_phrase.txt` 设置快捷输入，修改完成后要重新部署才能生效
+1.  **备份**: 备份现有的 `~/Library/Rime` 文件夹。
+2.  **安装字体**: 安装 `fonts/` 目录下的字体（HanaMinA/B）。
+3.  **同步文件**: 将本仓库所有文件拷贝至 `~/Library/Rime`。
+4.  **重新部署**: 点击 Rime 图标，选择 **“重新佈署 (Redeploy)”**。
 
-配置文件中大部分都有注释。
+---
 
-------
+## 🛠 功能指令说明
 
-## FAQ
+| 指令 | 描述 | 示例 |
+| :--- | :--- | :--- |
+| `q` | 动态计算器 | `q1+2*3` -> `7` |
+| `R` | 人民币/大写转换 | `R123.4` -> `壹佰贰拾叁元肆角` |
+| `rq` | 日期转换 | `2024-03-14` |
+| `sj` | 时间转换 | `09:15:20` |
+| `` ` `` | 笔画反查 | `` `hspnz `` |
+| `Ctrl + Shift + 4` | 繁简切换 | 实时切换 |
 
-### 快捷键
+---
 
-使用 Ctrl + ` (Tab上面那个)切换输入方案。
+## 📂 模块化配置文件指南
 
-### 如何添加词库
+本项目采用了 **“核心逻辑分离”** 的架构，方便维护：
 
-将词库文件拷贝到文件夹，修改 `luna_pinyin.extended.dict.yaml`文件
+- **核心共享层**:
+  - `shared_common.yaml`: **[最重要]** 存放所有方案共用的 Lua 插件、Emoji、英文混输、反查逻辑。
+  - `rime.lua`: 存放计算器、日期、金额转换的底层 Lua 代码。
+- **方案定义层**:
+  - `default.custom.yaml`: 全局开关、方案列表、快捷键。
+  - `luna_pinyin_simp.custom.yaml`: 朙月拼音简体。
+  - `double_pinyin_flypy.custom.yaml`: 小鹤双拼。
+  - `double_pinyin.custom.yaml`: 自然码双拼。
+- **外观与个性化**:
+  - `squirrel.custom.yaml`: macOS 专属设置（App 默认中/英状态、皮肤选择）。
+  - `custom_phrase.txt`: 用户自定义静态短语。
 
-将词库名字加在 `import_tables` 下(注意格式)(我的另一个仓库[rime-dict](https://github.com/Iorest/rime-dict)中收集了很多词库)
+---
 
-重新部署即可
+## 🎨 切换皮肤
 
-### 添加短语和缩写
+打开 `squirrel.custom.yaml`，修改以下两行：
 
-将短语和缩写添加至`custom_phrase.txt`文件中
+```yaml
+style/color_scheme: wechat_light      # 浅色模式皮肤
+style/color_scheme_dark: wechat_dark # 深色模式皮肤
+```
 
-**输入的字母和汉字之间是 `tab`，而不是空格**
+推荐可选：`wechat_light`, `mac_light`, `google`, `nord_light`, `apathy` 等。
 
-使用不会自动替换`tab`为空格的编辑器修改此文件
+---
 
-### Linux 环境下配置问题
+## 📝 开发者提示 (Maintenance)
 
-Linux 环境下, rime输入法默认配置可能不在` ~/.config/ibus/rime`下,此时如果需要用户设定,需要将所有的配置文件加入用户设定文件夹(如果用 ibus,那么就是` ~/.config/ibus/rime`),否则配置可能出错.
+如果您需要修改 **全方案通用** 的功能（例如调整计算器的触发键或修改 Emoji 过滤规则）：
+👉 请直接修改 `shared_common.yaml`。修改后，所有输入方案都会同步更新。
 
-另外,Linux 环境下输入法可能出现不生效的问题,这时可以在命令行中运行`ibus engine rime`,或可解决(使用ibus 框架时)
+---
 
-## 参考/致谢
+## 感谢
 
-1. [Mac 下调校 Rime](https://mritd.me/2019/03/23/oh-my-rime/)
-2. [鼠须管 0.11 Mac 升级重装配置 2019](https://github.com/cnfeat/Rime)
-3. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
-
+- [librime-lua](https://github.com/higeno/librime-lua)
+- [easy-en](https://github.com/BlindingDark/rime-easy-en)
+- [octagram-data](https://github.com/lotem/rime-octagram-data)

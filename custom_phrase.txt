@@ -1,6 +1,8 @@
-# 碼表各字段以製表符（Tab）分隔
-# 順序爲：文字+編碼+權重（決定重碼的次序、可選）,用tab键间隔
+# 🐉 Rime 自定义短语 - 快速输入神器
+# 注意：文字、编码、权重之间必须使用 Tab（制表符）分隔
+# 权重可选，数值越大越靠前
 
+# --- 常用软件/术语 ---
 iOS	ios
 iPhone	i
 macOS	macos
@@ -10,3 +12,22 @@ HarmonyOS	hm	2
 T恤	txu
 U盤	upan
 up主	upzhu
+
+# --- 占位符示例 (建议自行修改) ---
+# 邮箱
+# user@example.com	email
+# 电话
+# 13800138000	tel
+
+# --- 快捷输入 (示例) ---
+GitHub	gh
+Google	gg
+ChatGPT	gpt
+Rime	rime
+
+# --- Rime 符号/提示 ---
+	mac
+⌘	cmd
+⌥	opt
+⇧	shift
+⌃	ctrl
