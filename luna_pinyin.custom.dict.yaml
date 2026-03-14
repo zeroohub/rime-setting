@@ -1,0 +1,13 @@
+# Rime dictionary
+# encoding: utf-8
+# 个人自定义词库 - 可以在此手动添加词条
+
+---
+name: luna_pinyin.custom
+version: "2024.03.14"
+sort: by_weight
+...
+
+# 格式： 词条 <Tab> 拼音 <Tab> 权重（可选）
+# 例子：
+# 极客	ji ke	100

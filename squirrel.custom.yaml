@@ -421,3 +421,15 @@ patch:
       ascii_mode: true
     com.jetbrains.intellij: # idea
       ascii_mode: true
+    com.sublimetext.4: # Sublime Text
+      ascii_mode: true
+    com.tinyspeck.slackmacgap: # Slack
+      ascii_mode: true
+    md.obsidian: # Obsidian
+      ascii_mode: true
+    com.apple.Safari: # Safari 搜索栏建议中文，但如果你常搜英文可以设为 true
+      ascii_mode: false
+    com.google.Chrome: # Chrome
+      ascii_mode: false
+    com.apple.finder: # Finder 搜索建议中文
+      ascii_mode: false

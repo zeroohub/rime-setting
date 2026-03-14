@@ -1,0 +1,9 @@
+user.yaml
+*.bin
+*.userdb/
+*.old
+.DS_Store
+# 忽略词库软链接
+luna_pinyin.*.dict.yaml
+!luna_pinyin.extended.dict.yaml
+!luna_pinyin.sogou.dict.yaml

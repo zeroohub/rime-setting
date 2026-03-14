@@ -1,13 +1,36 @@
 # Rime dictionary
 # encoding: utf-8
-# Luna Pinyin Extended Dictionary(Basic)  - 明月拼音扩充词库（基本）
+# Luna Pinyin Extended Dictionary  - 明月拼音扩充词库
 
 ---
-name: luna_pinyin.extended      # 词库名
-version: "2021.02.07"
-sort: by_weight                 # by_weight（按词频高低排序）或 original（保持原码表中的顺序）
-use_preset_vocabulary: true     # true 或 false，选择是否导入预设词汇表【八股文】
+name: luna_pinyin.extended
+version: "2024.03.14"
+sort: by_weight
+use_preset_vocabulary: true
 
+# 导入词库表
+# 提示：带 [rime-dict] 标记的词库需通过 ./sync_dicts.sh 链接后方可自动激活
 import_tables:
   - luna_pinyin
   - luna_pinyin.sogou
+  
+  # --- 基础/通用增强 [rime-dict] ---
+  # - luna_pinyin.hanyu
+  # - luna_pinyin.poetry
+  # - luna_pinyin.name
+  
+  # --- 网络/流行语 [rime-dict] ---
+  # - luna_pinyin.bilibili
+  # - luna_pinyin.chat
+  # - luna_pinyin.website
+  
+  # --- 垂直领域 [rime-dict] ---
+  # - luna_pinyin.computer
+  # - luna_pinyin.science
+  # - luna_pinyin.movie
+  # - luna_pinyin.game
+  # - luna_pinyin.history
+  # - luna_pinyin.place
+  
+  # --- 个人自定义 ---
+  - luna_pinyin.custom

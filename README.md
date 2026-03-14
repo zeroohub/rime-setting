@@ -35,6 +35,21 @@
 | `sj` | 时间转换 | `09:15:20` |
 | `` ` `` | 笔画反查 | `` `hspnz `` |
 | `Ctrl + Shift + 4` | 繁简切换 | 实时切换 |
+| `Ctrl + Delete` | 选中并删除错词 | 选中错词按此键 |
+
+---
+
+## 🛠 开发与维护
+
+### 自动化校验
+本项目内置了 `check.sh` 脚本。如果您修改了配置，请在终端运行：
+```bash
+./check.sh
+```
+脚本会自动调用官方编译器验证您的 YAML 语法和引用逻辑。
+
+### 智能应用感知
+在 `squirrel.custom.yaml` 的 `app_options` 下，我们为常用的开发工具（VSCode, IntelliJ, Slack, Obsidian 等）预设了自动切换英文模式的规则，确保您的开发流程不被打断。
 
 ---
 
@@ -75,6 +90,14 @@ style/color_scheme_dark: wechat_dark # 深色模式皮肤
 👉 请直接修改 `shared_common.yaml`。修改后，所有输入方案都会同步更新。
 
 ---
+
+## 📚 增强词库同步 
+
+本项目支持通过 `git submodule` 同步 [rime-dict](https://github.com/Iorest/rime-dict) 增强词库： 
+
+1. **引入子模块**：`git submodule add https://github.com/Iorest/rime-dict.git dicts` 
+2. **一键链接**：运行 `./sync_dicts.sh` 自动创建词库映射。 
+3. **重新部署**：Rime 会自动识别并编译这些增强词库。 
 
 ## 感谢
 

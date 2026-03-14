@@ -1,13 +1,13 @@
-﻿# Rime dictionary
-# mim: set ts=8 sw=8 noet:
-# encoding: utf-8
-# easy_en - Easy English
+﻿#	Rime	dictionary
+#	mim:	set	ts=8	sw=8	noet:
+#	encoding:	utf-8
+#	easy_en	-	Easy	English
 
 ---
-name: easy_en
-version: "0.2"
-sort: by_weight
-use_preset_vocabulary: false
+name:	easy_en
+version:	"0.2"
+sort:	by_weight
+use_preset_vocabulary:	false
 ...
 
 Alook	alook
@@ -18,8 +18,8 @@ AirServer	airserver
 Android	android
 Android	anzhuo
 admin	admin
-App Store	appstore
-Apple ID	appleid
+App	Store	appstore
+Apple	ID	appleid
 BetterZip	betterzip
 bilibili	bilibili
 CarPlay	carplay
@@ -36,7 +36,7 @@ Dropbox	dropbox
 Enpass	enpass
 Evernote	evernote
 ExFAT	exfat
-Final Cut Pro	finalcutpro
+Final	Cut	Pro	finalcutpro
 false	false
 Geekbench	geekbench
 Google	google
@@ -75,7 +75,7 @@ TestFlight	testflight
 Telegram	telegram
 Things	things
 tab	tab
-Touch ID	touchid
+Touch	ID	touchid
 Tumblr	tumblr
 Twitter	twitter
 Typora	typora
@@ -92,7 +92,7 @@ WWDC	wwdc
 Wi-Fi	wifi
 WiFi	wifi
 win	win
-Window Tidy	windowtidy
+Window	Tidy	windowtidy
 Workflow	workflow
 Xmind	xmind
 YouTube	youtube
@@ -52744,7 +52744,7 @@ narvik	narvik	753000
 narwhal	narwhal	119000
 nary	nary	1150000
 nasa	nasa	78700000
-NASA  nasa  78700001
+NASA	nasa	78700001
 nasal	nasal	3330000
 nasalize	nasalize	5390
 nasally	nasally	82800
