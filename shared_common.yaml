@@ -14,13 +14,13 @@ common_switches:
     reset: 1
     states: [ 漢字, 汉字 ]
   - name: ascii_punct
+    reset: 1
     states: [ 。，, ．， ]
 
 common_engine_filters:
   - simplifier@emoji_suggestion
   - simplifier
   - uniquifier
-  - lua_filter@single_char_first_filter
 
 common_engine_translators:
   - punct_translator

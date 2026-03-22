@@ -46,7 +46,7 @@ if [ -f "$EXTENDED_DICT" ]; then
             dict_name="${link%.dict.yaml}"
             # 在主文件中查找并取消注释该词库名
             if grep -q "#[[:space:]]*- $dict_name" "$EXTENDED_DICT"; then
-                sed -i '' "s/#[[:space:]]*- $dict_name/  - $dict_name/g" "$EXTENDED_DICT"
+                sed -i "s/^[[:space:]]*#[[:space:]]*- $dict_name$/  - $dict_name/" "$EXTENDED_DICT"
                 echo "✅ 已激活配置: $dict_name"
             fi
         fi

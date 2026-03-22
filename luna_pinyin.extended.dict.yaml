@@ -15,21 +15,21 @@ import_tables:
   - luna_pinyin.sogou
   
   # --- 基础/通用增强 [rime-dict] ---
-  # - luna_pinyin.hanyu
-  # - luna_pinyin.poetry
-  # - luna_pinyin.name
-  
+  - luna_pinyin.hanyu
+  - luna_pinyin.poetry
+  - luna_pinyin.name
+
   # --- 网络/流行语 [rime-dict] ---
   # - luna_pinyin.bilibili
-  # - luna_pinyin.chat
-  # - luna_pinyin.website
-  
+  - luna_pinyin.chat
+  - luna_pinyin.website
+
   # --- 垂直领域 [rime-dict] ---
-  # - luna_pinyin.computer
+  - luna_pinyin.computer
   # - luna_pinyin.science
-  # - luna_pinyin.movie
-  # - luna_pinyin.game
-  # - luna_pinyin.history
+  - luna_pinyin.movie
+  - luna_pinyin.game
+  - luna_pinyin.history
   # - luna_pinyin.place
   
   # --- 个人自定义 ---

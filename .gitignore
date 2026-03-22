@@ -1,8 +1,15 @@
 user.yaml
+installation.yaml
 *.bin
 *.userdb/
 *.old
 .DS_Store
+build/
+sync/
+dicts/
+fonts/
+*.gram
+.gitmodules
 # 忽略词库软链接
 luna_pinyin.*.dict.yaml
 !luna_pinyin.extended.dict.yaml

@@ -1,9 +1,9 @@
 #!/bin/bash
 # Rime 配置自动化校验脚本
 
-DEPLOYER="/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_deployer"
+DEPLOYER=$(which rime_deployer 2>/dev/null || echo "/usr/bin/rime_deployer")
 USER_DIR=$(pwd)
-SHARED_DIR="/Library/Input Methods/Squirrel.app/Contents/SharedSupport"
+SHARED_DIR="/usr/share/rime-data"
 BUILD_DIR="/tmp/rime_check_build"
 
 echo "--- 开始校验 Rime 配置 ---"
