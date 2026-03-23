@@ -21,17 +21,18 @@ patch:
 
   # --- 3. 方案特有配置 ---
   translator/dictionary: luna_pinyin.extended
-  translator/enable_correction: true
+  translator/enable_correction: false
+  translator/enable_sentence: true
   translator/preedit_format: []
 
   # 拼写运算规则
   speller/algebra:
     - erase/^xx$/
-    - derive/^([zcs])h/$1/
-    - derive/^([zcs])([^h])/$1h$2/
-    - derive/([aeiou])ng$/$1gn/
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
-    - derive/ong$/on/
+    #- derive/^([zcs])h/$1/
+    #- derive/^([zcs])([^h])/$1h$2/
+    #- derive/([aeiou])ng$/$1gn/
+    #- derive/([dtngkhrzcs])o(u|ng)$/$1o/
+    #- derive/ong$/on/
     - abbrev/^([a-z]).+$/$1/
     - abbrev/^([zcs]h).+$/$1/
 
