@@ -1,0 +1,3 @@
+[submodule "dicts"]
+	path = dicts
+	url = https://github.com/Iorest/rime-dict.git
